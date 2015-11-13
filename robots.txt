@@ -1,4 +1,2 @@
 User-agent: *
 Disallow: 
-
-Sitemap: http://flexih.github.io/sitemap.xml 
