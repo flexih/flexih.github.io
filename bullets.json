@@ -10,6 +10,7 @@
   "domain":"http://www.youku.com",
   "url":"function t(){n='';if(window.videoTitle){n=window.videoTitle;}if(n==''){e=document.getElementsByClassName('x-title');if(e.length){n=e[0].textContent;}}if(n==''){n=document.title}return n;} function f(){src='';if(window.BuildVideoInfo&&window.BuildVideoInfo._videoInfo&&window.BuildVideoInfo._videoInfo.src){src=window.BuildVideoInfo._videoInfo.src}if(src==''){e=document.getElementsByTagName('video');if(e.length){src=e[0].src;}}if(src!=''){return src.concat('&type=hd2');} return '';} r={'url':f(),'cookie':document.cookie,'title':t()}",
   "frame":"e=document.getElementsByClassName('x-player');if(e){rect=e[0].getBoundingClientRect();r={'left':rect.left,'top':rect.top,'width':rect.width,'height':rect.height};}else{r={'left':0,'top':0,'width':0,'height':0}}",
+  "playNext":"test too",
   "website":"优酷"
  },
  {
