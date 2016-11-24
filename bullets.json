@@ -5,13 +5,5 @@
   "frame":"e=document.getElementById('player-trigger');if(!e){e=document.getElementsByClassName('m-video-player');if(e){e=e[0]}} if(e){rect=e.getBoundingClientRect();r={'left':rect.left,'top':rect.top,'width':rect.width,'height':rect.height};}else{r={'left':0,'top':0,'width':0,'height':0};}",
   "playNext":"if(window.Qiyi && Qiyi.video){Qiyi.video.src=function(a, b){var c = this._player, e = b.duration, g = this;this._validduration=!1, this.adTime = b.adTime, this.ptTime = b.pt, this.pwTime = b.pw, this._defaultDuration = e, this._currentTime = 0, this.ended=!1, this._firstPlay=!0, this._first=!1, this._hasPlayDone=!1, this.autoSkipPtPw=!0, c.setAttribute('src', a), this.fire({type: 'aftersetsrc'}), window.webkit.messageHandlers.PNF.postMessage({'next':'true', 'url':a});}; 'true';} else {'false';}",
   "website":"爱奇艺"
- },
- {
-  "domain":"http://www.youku.com",
-  "urlJS":"function f(){src='';if(window.BuildVideoInfo&&window.BuildVideoInfo._videoInfo&&window.BuildVideoInfo._videoInfo.src){src=window.BuildVideoInfo._videoInfo.src}if(src==''){e=document.getElementsByTagName('video');if(e.length){src=e[0].src;}}if(src!=''){src=src.concat('&type=mp4');if(src.indexOf('http')!=0){src='http:'.concat(src);}return src;} return '';} f();",
-  "titleJS":"function t(){n='';if(window.videoTitle){n=window.videoTitle;}if(n==''){e=document.getElementsByClassName('x-title');if(e.length){n=e[0].textContent;}}if(n==''){n=document.title}return n;} t();",
-  "isLogin":"function f(){l=document.cookie.split('; ');for(v in l){if(l[v].indexOf('u=')==0){return '1';}}return '0';} f();",
-  "loginable":true,
-  "website":"优酷"
  }
 ]
