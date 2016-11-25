@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.otao.me/"/>
-  <updated>2016-11-24T11:05:01.000Z</updated>
+  <updated>2016-11-25T02:48:03.000Z</updated>
   <id>http://www.otao.me/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Set的误用</title>
+    <link href="http://www.otao.me/2016/11/25/set/"/>
+    <id>http://www.otao.me/2016/11/25/set/</id>
+    <published>2016-11-25T02:19:08.000Z</published>
+    <updated>2016-11-25T02:48:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>发现项目中有一处对NSMutableSet的误用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">@interface Model</div><div class="line">@property (nonnull, nonatomic, copy) NSURL *URL;</div><div class="line">@property (nonatomic, copy) NSString *value;</div><div class="line">@end</div><div class="line"></div><div class="line">@implementation Model</div><div class="line">- (NSUInteger)hash &#123;</div><div class="line">    return self.URL.hash;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (BOOL)isEqual:(id)object &#123;</div><div class="line">  if (self == object) &#123;</div><div class="line">    return true;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  return [self.URL isEqual:object.URL];</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure></p>
+<p>使用的时候会多次添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Model *m1 = [Model new];</div><div class="line">m1.URL = [NSURL URLWithString:@&quot;http://www.youku.com&quot;];</div><div class="line">m1.value = @&quot;1&quot;;</div><div class="line"></div><div class="line">Model *m2 = [Model new];</div><div class="line">m2.URL = [NSURL URLWithString:@&quot;http://www.youku.com&quot;];</div><div class="line">m2.value = @&quot;2&quot;;</div><div class="line"></div><div class="line">NSMutableSet *set = [NSMutableSet set];</div><div class="line">[set addObject:m1];</div><div class="line">...</div><div class="line">[set addObject:m2];</div></pre></td></tr></table></figure>
+<p>这里期望Model值相同的时候会覆盖添加。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//Adds a given object to the set, if it is not already a member.</div><div class="line">- (void)addObject:(ObjectType)object;</div></pre></td></tr></table></figure>
+<p>如果值相同会忽略。</p>
+<p>所以不会覆盖原值而是丢弃新值。在期望覆盖的场景先移除旧值再添加新值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[set removeObject:m2];</div><div class="line">[set addObject:m2];</div></pre></td></tr></table></figure>
+<p><strong>PS:这种场景更适合用Dictionary，以Model.URL为key，Model为value。</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;发现项目中有一处对NSMutableSet的误用。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line
+    
+    </summary>
+    
+    
+      <category term="Set Dictionary iOS" scheme="http://www.otao.me/tags/Set-Dictionary-iOS/"/>
+    
+  </entry>
   
   <entry>
     <title>IT花销</title>
