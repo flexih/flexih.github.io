@@ -4,16 +4,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <link rel="icon" href="pnf_favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="pnf_favicon.ico" type="image/x-icon" />
-    <title>阿咘 for Mac</title>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?4e10895c6a35e275b0296aa26170e8cd";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+    <title>阿咘下载 for Mac</title>
     <style type="text/css">
         body {
                 margin: 0 0 230px 0;
@@ -50,7 +41,7 @@
             background-repeat: no-repeat;
             background-position: top center;
             background-size: 180px 190px;
-            background-image: url(image/pnf_256x256.png);
+            background-image: url(image/downloader_256x256.png);
         }
         
         h1+p {
@@ -67,45 +58,23 @@
         a {
             color: inherit;
             text-decoration: none;
-            border-bottom: 1px solid rgb(91,90,85);
+            /*border-bottom: 1px solid rgb(91,90,85);*/
         }
-        a:hover,
+/*        a:hover,
         a:active {
             color: black;
             border-bottom-color: rgb(131,130,125);
-        }
+        }*/
 
         .appstore {
             margin: 50px 0 30px 0;
             padding: 0;
             text-align: center;
         }
-        .appstore a {
-            display: block;
-            margin:0 auto;
-            overflow: hidden;
-            font-size: 0;
-            line-height: 0;
-            height: 40px;
-            text-decoration: none;
-            border: 0;
-            background-image:url(image/App_Store_Badge.svg);
-            background-repeat:no-repeat;
-            background-color: white;
-            opacity: 0.8;
-            background-position: top center;
-            
-            -webkit-transition: opacity 1s;
-            -moz-transition: opacity 1s;
-            transition: opacity 1s;
-            
-        }
-        .appstore a:hover {
-            opacity: 1.0;
-        }
+
         .appstore span {
-            font-size: 11px;
-            opacity: 0.5;
+            color: rgb(131,130,125);
+            font-size: 12px;
         }
 
         .screens {
@@ -141,6 +110,18 @@
             background-image: url(image/pnf2.gif);
         }
 
+        .button {
+            display: inline-block;
+            position: relative;
+            padding: .5em 1.25em .625em;
+            background: rgba(98, 54, 255, 0.05);
+            color: #6236ff;
+            border: 1px solid rgba(98, 54, 255, 0.5);
+            border-radius: .125rem;
+            box-shadow: 0 1px 1px 0 rgba(19, 10, 51, 0.05);
+            transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        }
+
     </style>
 </head>
 <body>
@@ -160,7 +141,9 @@
     <a href="http://www.youtube.com" target="_blank">Youtube</a> 等视频网站.
 </p>
 <p class="appstore">
-    <a href="https://itunes.apple.com/cn/app/pnf/id1048365277?ls=1&mt=12" target="_blank">Download on the Mac App Store</a>
+    <a href="https://github.com/flexih/PNF/raw/master/downloader/1.0/ABUDownloader.zip" target="_blank" class="button" style="margin-right: 0.5em">Single User License<br/><br/>2 Mac Devices</a>
+    <a href="buy.html" target="_blank" class="button" style="margin-left: 0.5em">Family License<br/><br/>5 Mac Devices</a>
+    <br/>
     <br/>
     <span>Requires OSX 10.10 or later</span>
 </p>
@@ -171,14 +154,6 @@
         <span class="p1"></span>
     </p>
 </div>
-
-<p style="text-align:center;color: rgb(131,130,125);font-weight: 400;">
-    <a href="ABU.html" style="border-bottom: none;">阿咘 for iPhone</a>
-</p>
-    
-<p>
-<video src="intro.mp4" style="display:none" />
-</p>
     
 </body>
 </html>
