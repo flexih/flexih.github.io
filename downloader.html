@@ -78,36 +78,20 @@
         }
 
         .screens {
-            height: 380px;
+            height: 480px;
             background: rgba(0,0,0,0.05);
             outline: 1px solid rgba(255,255,255,0.1);
-            
-            margin-bottom: 30px;
-
-            overflow: hidden;
+            /*overflow: hidden;*/
             white-space: nowrap;
             text-align: center;
         }
 
         .screens span {
             display: inline-block;
-            margin: 10px 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             border-radius: 3px;
             box-shadow: rgba(0,0,0,0.5) 0px 0px 3px;
-        }
-
-        .screens .p0 {
-            background-size: 580px 340px;
-            width: 580px;
-            height: 340px;
-            background-image: url(image/pnf1.gif);
-        }
-
-        .screens .p1 {
-            background-size: 580px 340px;
-            width: 580px;
-            height: 340px;
-            background-image: url(image/pnf2.gif);
         }
 
         .button {
@@ -149,10 +133,12 @@
 </p>
 
 <div class="screens">
-    <p>
-        <span class="p0"></span>
-        <span class="p1"></span>
-    </p>
+<span>
+    <video preload="" onplaying="this.controls=false" loop="" autoplay="" class="max-width: 90%;">
+            <source itemprop="contentUrl" src="video/downloader.mp4" type="video/mp4">
+            <p>Your browser does not support HTML5 video.</p>
+    </video>
+</span>
 </div>
     
 </body>
