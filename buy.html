@@ -48,7 +48,7 @@
             margin: -10px 0 30px 0;
             padding: 0;
             text-align: center;
-            font-size: 13px;
+            font-size: 15px;
             color: rgb(131,130,125);
         }
         h1+p a {
@@ -87,13 +87,18 @@
             overflow: hidden;
             white-space: nowrap;
             text-align: center;
+            
+            overflow: scroll;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
         }
 
         .screens span {
             display: inline-block;
-            margin: 10px 10px;
-            border-radius: 3px;
-            box-shadow: rgba(0,0,0,0.5) 0px 0px 3px;
+            margin: 30px 10px;
+            /*border-radius: 3px;*/
+            /*box-shadow: rgba(0,0,0,0.5) 0px 0px 3px;*/
         }
 
         .screens .p0 {
@@ -128,12 +133,34 @@
 
 <h1></h1>
 <p>
-    欢迎购买<br/>
-    支持微信、支付宝转账
+    购买说明<br/>
+    微信、支付宝扫描二维码支付<br/>
+    支付成功后，请把支付成功结果截图和您的邮箱(默认使用发送邮箱注册)发送到 <a href="mailto:downloader@otao.me" style="text-decoration: underline;">downloader@otao.me</a><br/>
+    我们会以尽可能快的速度发送激活码到您的邮箱
 </p>
+<div style="text-align: center; margin-bottom: 1em;">
+<span class="button" style="margin-right: 6em">
+¥39
+<br /><br />Single User License<br/><br/>2 Mac Devices
+</span>
+<span class="button" style="margin-left: 6em">
+¥59
+<br /><br />Family License<br/><br/>5 Mac Devices
+</span>
+</div>
 <div class="screens">
-    <a href="https://github.com/flexih/PNF/raw/master/downloader/1.0/ABUDownloader.zip" target="_blank" class="button" style="margin-right: 0.5em">Single User License<br/><br/>2 Mac Devices</a>
-    <a href="buy.html" target="_blank" class="button" style="margin-left: 0.5em">Family License<br/><br/>5 Mac Devices</a>
+	<span>
+		<img src="image/wechat_single.png" style="width: 250px; height: 267px;" alt="" />
+	</span>
+	<span>
+		<img src="image/wechat_family.png" style="width: 250px; height: 267px;" alt="" />
+	</span>
+	<span>
+			<img src="image/alipay_single.png" style="width: 250px; height: 294px;" alt="" />
+	</span>
+    <span>
+    	<img src="image/alipay_family.png" style="width: 250px; height: 294px;" alt="" />
+    </span>
 </div>
     
 </body>
