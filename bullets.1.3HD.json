@@ -1,0 +1,8 @@
+[
+ {
+  "domain":"http://www.youku.com",
+  "url":"function t(){document.getElementsByClassName('x-video-button')[0].click();return document.getElementsByTagName('video')[0].src;} r={'url':f(),'cookie':document.cookie,'title':t()}",
+  "frame":"e=document.getElementsByClassName('x-player');if(e){rect=e[0].getBoundingClientRect();r={'left':rect.left,'top':rect.top,'width':rect.width,'height':rect.height};}else{r={'left':0,'top':0,'width':0,'height':0}}",
+  "website":"优酷"
+ }
+]
