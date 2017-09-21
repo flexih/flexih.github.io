@@ -10,7 +10,7 @@
     <meta name="keywords"  content="flexih, iOS, macOS, code">
     <meta name="theme-color" content="#000000">
     
-    <title>flexih Blog</title>
+    <title>Tags - flexih Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://otao.me/">
+    <link rel="canonical" href="https://otao.me/tags/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -150,14 +150,13 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg-o.jpg')">
+<header class="intro-header" style="background-image: url('/img/tag-bg.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>flexih's</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">about code, about life.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading" id="tag-heading">
+                    <h1>Tags</h1>
+                    <span class="subheading"></span>
                 </div>
             </div>
         </div>
@@ -167,50 +166,94 @@
 <!-- Main Content -->
 <div class="container">
 	<div class="row">
-        
-<!-- NO SIDEBAR -->
-    <!-- PostList Container -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
-                
-<div class="post-preview">
-    <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/">
-        <h2 class="post-title">
-            关于空气
-        </h2>
-        
-        <div class="post-content-preview">
-            去年（2016年）春节后上班公司搬到了新装修的办公室。
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 标签云 -->
+			<div id='tag_cloud' class="tags">
+				
+				<a href="#雾霾" title="雾霾" rel="1">雾霾</a>
+				
+				<a href="#甲醛" title="甲醛" rel="1">甲醛</a>
+				
+				<a href="#新风" title="新风" rel="1">新风</a>
+				
+			</div>
 
-刚开始并没有明显的不适，直到有一天晚上要下班的时候，突然感觉头晕不太舒服，怀疑是甲醛引起的，第二天在家歇了一天。
+            <!--<blockquote class="tag-comments">
+                标签命名规范：
+                    <li>行业观察、职位、公司优先使用中文</li>
+                    <li>外国产品、术语优先使用英文</li>
+            </blockquote>-->
 
-之后又搬到了新房住，住进去的时候已经放味将近一年了。然后噩梦就此开始。白天公司吸甲醛，晚上家里吸甲醛。终于某天周六加班的时候，突然开始流鼻血。但是还是坐在窗户旁边，窗户也打开着。之后就是偶尔流鼻血然后结痂然后又流鼻血。
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by flexih on September 21, 2017
-    </p>
-</div>
-<hr>
+            <!-- 标签列表 -->
+			
+			<div class="one-tag-list">
+			  	<span class="fa fa-tag listing-seperator" id="雾霾">
+                    <span class="tag-text">雾霾</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2017-09-21">2017-09-21</time>
+				  <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/" title="关于空气">关于空气</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/">
+				        <h2 class="post-title">
+                            关于空气
+				        </h2>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2017-09-21</p> -->
+				</div>
+				<hr>
+				
+			</div>
+			
+			<div class="one-tag-list">
+			  	<span class="fa fa-tag listing-seperator" id="甲醛">
+                    <span class="tag-text">甲醛</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2017-09-21">2017-09-21</time>
+				  <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/" title="关于空气">关于空气</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/">
+				        <h2 class="post-title">
+                            关于空气
+				        </h2>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2017-09-21</p> -->
+				</div>
+				<hr>
+				
+			</div>
+			
+			<div class="one-tag-list">
+			  	<span class="fa fa-tag listing-seperator" id="新风">
+                    <span class="tag-text">新风</span>
+                </span>
+				
+				  <!-- <li class="listing-item">
+				  <time datetime="2017-09-21">2017-09-21</time>
+				  <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/" title="关于空气">关于空气</a>
+				  </li> -->
+				 <div class="post-preview">
+				    <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/">
+				        <h2 class="post-title">
+                            关于空气
+				        </h2>
+				        
+				    </a>
+				    <!-- <p class="post-meta">2017-09-21</p> -->
+				</div>
+				<hr>
+				
+			</div>
+			
 
-
-<!-- Pager -->
-
-
-            </div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-
-                <!-- Friends Blog -->
-                
-            </div>
-        
+		</div>
 	</div>
 </div>
 
