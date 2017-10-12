@@ -10,7 +10,7 @@
     <meta name="keywords"  content="flexih, iOS, macOS, code">
     <meta name="theme-color" content="#000000">
     
-    <title>Tags - flexih Blog</title>
+    <title>UINavigationBar iOS11适配问题 - flexih Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/tags/">
+    <link rel="canonical" href="http://localhost:4000/2017/10/12/UINavigationBar-iOS11%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -149,161 +149,229 @@
 </script>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/tag-bg.jpg')">
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/home-bg-o.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/home-bg-o.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading" id="tag-heading">
-                    <h1>Tags</h1>
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#iOS11" title="iOS11">iOS11</a>
+                        
+                        <a class="tag" href="/tags/#UINavigationBar" title="UINavigationBar">UINavigationBar</a>
+                        
+                    </div>
+                    <h1>UINavigationBar iOS11适配问题</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by flexih on October 12, 2017</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-			<div id='tag_cloud' class="tags">
-				
-				<a href="#雾霾" title="雾霾" rel="1">雾霾</a>
-				
-				<a href="#甲醛" title="甲醛" rel="1">甲醛</a>
-				
-				<a href="#新风" title="新风" rel="1">新风</a>
-				
-				<a href="#iOS11" title="iOS11" rel="1">iOS11</a>
-				
-				<a href="#UINavigationBar" title="UINavigationBar" rel="1">UINavigationBar</a>
-				
-			</div>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-            <!--<blockquote class="tag-comments">
-                标签命名规范：
-                    <li>行业观察、职位、公司优先使用中文</li>
-                    <li>外国产品、术语优先使用英文</li>
-            </blockquote>-->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-            <!-- 标签列表 -->
-			
-			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="雾霾">
-                    <span class="tag-text">雾霾</span>
-                </span>
-				
-				  <!-- <li class="listing-item">
-				  <time datetime="2017-09-21">2017-09-21</time>
-				  <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/" title="关于空气">关于空气</a>
-				  </li> -->
-				 <div class="post-preview">
-				    <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/">
-				        <h2 class="post-title">
-                            关于空气
-				        </h2>
-				        
-				    </a>
-				    <!-- <p class="post-meta">2017-09-21</p> -->
-				</div>
-				<hr>
-				
-			</div>
-			
-			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="甲醛">
-                    <span class="tag-text">甲醛</span>
-                </span>
-				
-				  <!-- <li class="listing-item">
-				  <time datetime="2017-09-21">2017-09-21</time>
-				  <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/" title="关于空气">关于空气</a>
-				  </li> -->
-				 <div class="post-preview">
-				    <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/">
-				        <h2 class="post-title">
-                            关于空气
-				        </h2>
-				        
-				    </a>
-				    <!-- <p class="post-meta">2017-09-21</p> -->
-				</div>
-				<hr>
-				
-			</div>
-			
-			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="新风">
-                    <span class="tag-text">新风</span>
-                </span>
-				
-				  <!-- <li class="listing-item">
-				  <time datetime="2017-09-21">2017-09-21</time>
-				  <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/" title="关于空气">关于空气</a>
-				  </li> -->
-				 <div class="post-preview">
-				    <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/">
-				        <h2 class="post-title">
-                            关于空气
-				        </h2>
-				        
-				    </a>
-				    <!-- <p class="post-meta">2017-09-21</p> -->
-				</div>
-				<hr>
-				
-			</div>
-			
-			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="iOS11">
-                    <span class="tag-text">iOS11</span>
-                </span>
-				
-				  <!-- <li class="listing-item">
-				  <time datetime="2017-10-12">2017-10-12</time>
-				  <a href="/2017/10/12/UINavigationBar-iOS11%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/" title="UINavigationBar iOS11适配问题">UINavigationBar iOS11适配问题</a>
-				  </li> -->
-				 <div class="post-preview">
-				    <a href="/2017/10/12/UINavigationBar-iOS11%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/">
-				        <h2 class="post-title">
-                            UINavigationBar iOS11适配问题
-				        </h2>
-				        
-				    </a>
-				    <!-- <p class="post-meta">2017-10-12</p> -->
-				</div>
-				<hr>
-				
-			</div>
-			
-			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="UINavigationBar">
-                    <span class="tag-text">UINavigationBar</span>
-                </span>
-				
-				  <!-- <li class="listing-item">
-				  <time datetime="2017-10-12">2017-10-12</time>
-				  <a href="/2017/10/12/UINavigationBar-iOS11%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/" title="UINavigationBar iOS11适配问题">UINavigationBar iOS11适配问题</a>
-				  </li> -->
-				 <div class="post-preview">
-				    <a href="/2017/10/12/UINavigationBar-iOS11%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/">
-				        <h2 class="post-title">
-                            UINavigationBar iOS11适配问题
-				        </h2>
-				        
-				    </a>
-				    <!-- <p class="post-meta">2017-10-12</p> -->
-				</div>
-				<hr>
-				
-			</div>
-			
+				<p>在适配iOS11的过程中遇到UINavigationBar的leftBarButtonItems, rightBarButtonItems设置后距离屏幕间距变大问题。</p>
 
-		</div>
-	</div>
-</div>
+<p>UINavigationBar在iOS11上的视图层次发生了变化：</p>
+
+<p><img src="/img/navbar/navbar.png" alt="" /></p>
+
+<p>BarButtonItems被包装到了_UIButtonBarStackView里。iOS11上BarButtonItems开始使用UILayoutGuide布局。</p>
+
+<p>来看leftBarButtonItems的约束：</p>
+
+<p><img src="/img/navbar/leftbar2.png" alt="" /></p>
+
+<p><img src="/img/navbar/leftbar1.png" alt="" /></p>
+
+<p>可以看出leftBarButtonItems的leading，与BackButtonGuide的trailing相关，这里的约束就算BackButton宽度是0的时候，trailing然后起作用。</p>
+
+<pre><code class="language-objective-c">[navigationbar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) {
+            __block NSLayoutConstraint *c = nil;
+            [obj.layoutGuides enumerateObjectsUsingBlock:^(__kindof UILayoutGuide * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([o.identifier hasPrefix:@"BackButtonGuide"]) {
+                    c = [o.trailingAnchor constraintEqualToAnchor:o.leadingAnchor constant:12]; //|←
+                    c.identifier = [@"BackButtonGuide" stringByAppendingFormat:@"(%p)",c];
+                    c.priority = UILayoutPriorityRequired;
+                    *stop = true;
+                }
+            }];
+            if (c) {
+                [obj.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if (o.firstItem == c.firstItem &amp;&amp; o.firstAttribute == c.firstAttribute) {
+                        [o setActive:false];
+                        [c setActive:true];
+                        *stop = true;
+                    }
+                }];
+            }
+            *stop = true;
+        }
+    }];
+</code></pre>
+
+<p>rightBarButtonItems的约束：</p>
+
+<p><img src="/img/navbar/rightbar1.png" alt="" /></p>
+
+<pre><code class="language-objective-c">    [navigationbar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) {
+            __block NSLayoutConstraint *c = nil;
+            [obj.layoutGuides enumerateObjectsUsingBlock:^(__kindof UILayoutGuide * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([o.identifier hasPrefix:@"TrailingBarGuide"]) {
+                    c = [o.trailingAnchor constraintEqualToAnchor:obj.trailingAnchor constant:-12]; //→|
+                    c.identifier = [@"TrailingBarGuide" stringByAppendingFormat:@"(%p)",c];
+                    c.priority = UILayoutPriorityRequired;
+                    *stop = true;
+                }
+            }];
+            if (c) {
+                [obj.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if (o.firstItem == c.firstItem &amp;&amp; o.firstAttribute == c.firstAttribute) {
+                        [o setActive:false];
+                        [c setActive:true];
+                        *stop = true;
+                    }
+                }];
+            }
+            *stop = true;
+        }
+    }];
+</code></pre>
+
+<p>PS:注意到_UIButtonBarStackView内部还存在约束冲突的错误。。。</p>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/21/%E5%85%B3%E4%BA%8E%E7%A9%BA%E6%B0%94/" data-toggle="tooltip" data-placement="top" title="关于空气">
+                        Previous<br>
+                        <span>关于空气</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hux";
+    var disqus_identifier = "/2017/10/12/UINavigationBar iOS11适配问题";
+    var disqus_url = "http://localhost:4000/2017/10/12/UINavigationBar-iOS11%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
     <!-- Footer -->
