@@ -204,7 +204,7 @@
 
 <p><img src="/img/navbar/navbar.png" alt="" /></p>
 
-<p>BarButtonItems被包装到了_UIButtonBarStackView里。iOS11上BarButtonItems开始使用UILayoutGuide布局。</p>
+<p>BarButtonItems被包装到了_UIButtonBarStackView里。iOS11上BarButtonItems开始使用UILayoutGuide布局，是造成之前用FixedSpace失效的原因。</p>
 
 <p>来看leftBarButtonItems的约束：</p>
 
@@ -212,7 +212,7 @@
 
 <p><img src="/img/navbar/leftbar1.png" alt="" /></p>
 
-<p>可以看出leftBarButtonItems的leading，与BackButtonGuide的trailing相关，这里的约束就算BackButton宽度是0的时候，trailing然后起作用。</p>
+<p>可以看出leftBarButtonItems的leading，与BackButtonGuide的trailing相关，这里的约束就算BackButton宽度是0的时候，trailing仍然起作用。使用以下方法设置leftBarButtonItems的左间距。</p>
 
 <pre><code class="language-objective-c">[navigationbar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) {
@@ -220,7 +220,7 @@
             [obj.layoutGuides enumerateObjectsUsingBlock:^(__kindof UILayoutGuide * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([o.identifier hasPrefix:@"BackButtonGuide"]) {
                     c = [o.trailingAnchor constraintEqualToAnchor:o.leadingAnchor constant:12]; //|←
-                    c.identifier = [@"BackButtonGuide" stringByAppendingFormat:@"(%p)",c];
+                    c.identifier = o.identifier;
                     c.priority = UILayoutPriorityRequired;
                     *stop = true;
                 }
@@ -243,13 +243,14 @@
 
 <p><img src="/img/navbar/rightbar1.png" alt="" /></p>
 
+<p>使用以下方法设置rightBarButtonItems的右间距。</p>
 <pre><code class="language-objective-c">    [navigationbar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) {
             __block NSLayoutConstraint *c = nil;
             [obj.layoutGuides enumerateObjectsUsingBlock:^(__kindof UILayoutGuide * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([o.identifier hasPrefix:@"TrailingBarGuide"]) {
                     c = [o.trailingAnchor constraintEqualToAnchor:obj.trailingAnchor constant:-12]; //→|
-                    c.identifier = [@"TrailingBarGuide" stringByAppendingFormat:@"(%p)",c];
+                    c.identifier = o.identifier;
                     c.priority = UILayoutPriorityRequired;
                     *stop = true;
                 }
@@ -268,7 +269,7 @@
     }];
 </code></pre>
 
-<p>PS:注意到_UIButtonBarStackView内部还存在约束冲突的错误。。。</p>
+<p>PS:注意到_UIButtonBarStackView内部还存在约束冲突的错误😅。。。</p>
 
 
                 <hr style="visibility: hidden;">

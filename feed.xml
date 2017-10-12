@@ -5,8 +5,8 @@
     <description>about code, about life.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 12 Oct 2017 12:23:42 +0800</pubDate>
-    <lastBuildDate>Thu, 12 Oct 2017 12:23:42 +0800</lastBuildDate>
+    <pubDate>Thu, 12 Oct 2017 12:35:50 +0800</pubDate>
+    <lastBuildDate>Thu, 12 Oct 2017 12:35:50 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -17,7 +17,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/img/navbar/navbar.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;BarButtonItems被包装到了_UIButtonBarStackView里。iOS11上BarButtonItems开始使用UILayoutGuide布局。&lt;/p&gt;
+&lt;p&gt;BarButtonItems被包装到了_UIButtonBarStackView里。iOS11上BarButtonItems开始使用UILayoutGuide布局，是造成之前用FixedSpace失效的原因。&lt;/p&gt;
 
 &lt;p&gt;来看leftBarButtonItems的约束：&lt;/p&gt;
 
@@ -25,7 +25,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/img/navbar/leftbar1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;可以看出leftBarButtonItems的leading，与BackButtonGuide的trailing相关，这里的约束就算BackButton宽度是0的时候，trailing然后起作用。&lt;/p&gt;
+&lt;p&gt;可以看出leftBarButtonItems的leading，与BackButtonGuide的trailing相关，这里的约束就算BackButton宽度是0的时候，trailing仍然起作用。使用以下方法设置leftBarButtonItems的左间距。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;[navigationbar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSClassFromString(@&quot;_UINavigationBarContentView&quot;)]) {
@@ -33,7 +33,7 @@
             [obj.layoutGuides enumerateObjectsUsingBlock:^(__kindof UILayoutGuide * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([o.identifier hasPrefix:@&quot;BackButtonGuide&quot;]) {
                     c = [o.trailingAnchor constraintEqualToAnchor:o.leadingAnchor constant:12]; //|←
-                    c.identifier = [@&quot;BackButtonGuide&quot; stringByAppendingFormat:@&quot;(%p)&quot;,c];
+                    c.identifier = o.identifier;
                     c.priority = UILayoutPriorityRequired;
                     *stop = true;
                 }
@@ -56,13 +56,14 @@
 
 &lt;p&gt;&lt;img src=&quot;/img/navbar/rightbar1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;使用以下方法设置rightBarButtonItems的右间距。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;    [navigationbar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSClassFromString(@&quot;_UINavigationBarContentView&quot;)]) {
             __block NSLayoutConstraint *c = nil;
             [obj.layoutGuides enumerateObjectsUsingBlock:^(__kindof UILayoutGuide * _Nonnull o, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([o.identifier hasPrefix:@&quot;TrailingBarGuide&quot;]) {
                     c = [o.trailingAnchor constraintEqualToAnchor:obj.trailingAnchor constant:-12]; //→|
-                    c.identifier = [@&quot;TrailingBarGuide&quot; stringByAppendingFormat:@&quot;(%p)&quot;,c];
+                    c.identifier = o.identifier;
                     c.priority = UILayoutPriorityRequired;
                     *stop = true;
                 }
@@ -81,7 +82,7 @@
     }];
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;PS:注意到_UIButtonBarStackView内部还存在约束冲突的错误。。。&lt;/p&gt;
+&lt;p&gt;PS:注意到_UIButtonBarStackView内部还存在约束冲突的错误😅。。。&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Oct 2017 12:21:00 +0800</pubDate>
         <link>http://localhost:4000/2017/10/12/UINavigationBar-iOS11%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/</link>
